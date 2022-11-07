@@ -14,7 +14,7 @@ body {
 }
 
 #background {
-    background: radial-gradient(circle farthest-side, #021f3a, #011223);
+    background: #001325;
     background-repeat: no-repeat;
     background-position: center;
     transform: translateY(-6rem);
@@ -27,7 +27,7 @@ body {
 /* Loading screen start */
 
 #loader_block {
-    background: radial-gradient(circle farthest-side, #021f3a, #011223);
+    background: #103450;
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
@@ -132,7 +132,7 @@ body {
     width: 100%;
     padding-top: 5rem;
     padding-bottom: 6rem;
-    background: radial-gradient(circle farthest-side, #103450, #011223);
+    background: #103450;
 }
 
 #presentedImgs img {
@@ -196,6 +196,8 @@ body {
 
 /* Rewards end */
 
+/* Events start */
+
 .events {
     margin-top: 6rem;
     width: 100%;
@@ -204,7 +206,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: radial-gradient(circle farthest-side, #103450, #011223);
+    background: #103450;
 }
 
 .eventsAlt {
@@ -220,7 +222,7 @@ body {
 }
 
 .eventCard {
-    background: linear-gradient(0deg, rgba(16, 52, 80, 0) 0%, #134164 100%);
+    background: linear-gradient(180deg, rgba(16, 52, 80, 0) 0%, #001325 100%);
     border: 0.1rem solid #1a4565;
     border-radius: 1rem;
     padding: 1rem 5rem;
@@ -230,7 +232,15 @@ body {
     margin-bottom: 0;
     text-align: start;
     max-width: 48rem;
-    gap: 1rem;
+    gap: 2rem;
+}
+
+.eventCard>div:first-of-type {
+    padding: 2rem 0;
+}
+
+.eventsAlt .eventCard {
+    background: linear-gradient(0deg, rgba(16, 52, 80, 0) 0%, #134164 100%);
 }
 
 .eventRev {
@@ -246,12 +256,70 @@ body {
     display: block;
 }
 
+.eventImg {
+    transition: all 300ms ease-in-out;
+}
+
+.eventImg img {
+    width: 20rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 0.1rem solid #1a4565;
+    margin: 1.5rem 0;
+}
+
+.eventCard:nth-of-type(odd):hover .eventImg {
+    transform: scale(103%) rotate(5deg);
+}
+
+.eventCard:nth-of-type(even):hover .eventImg {
+    transform: scale(103%) rotate(-5deg);
+}
+
+.events:last-of-type {
+    padding-bottom: 4rem;
+}
+
+.eventTime {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    margin-top: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.eventLocation {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.readMore {
+    border: 0.2rem solid #ffffff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.7rem;
+    width: fit-content;
+    margin-top: 1.7rem;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.readMore:hover {
+    background: white;
+    color: #05223f;
+}
+
 @media (max-width:1000px) {
     .eventCard {
         flex-direction: column-reverse;
         max-width: calc(100vw - 6rem);
         padding: 2rem;
         padding-top: 1rem;
+        gap: 1rem;
+    }
+
+    .eventCard>div:first-of-type {
+        padding: 0;
     }
 
     .eventHead {
@@ -259,4 +327,38 @@ body {
         margin-bottom: 1rem;
         font-size: 1.5rem;
     }
+
+    .eventImg img {
+        width: calc(100vw - 6rem);
+        aspect-ratio: 1;
+        margin: 1rem 0;
+    }
+}
+
+/* Events end */
+
+
+#gototop {
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    border: 0.1rem solid #32648a;
+    color: #32648a;
+    border-radius: 5rem;
+    padding: 1rem 1.5rem;
+    justify-self: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+#gototop:hover {
+    transform: scale(97%);
+    color: #1a4565;
+    border: 0.1rem solid #1a4565;
+}
+
+#gototop i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
 }
