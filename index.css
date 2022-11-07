@@ -1,0 +1,262 @@
+:root {
+    --blue: #9ACDFF;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    font-family: 'Montserrat';
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#background {
+    background: radial-gradient(circle farthest-side, #021f3a, #011223);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-6rem);
+    height: 110vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -5;
+}
+
+/* Loading screen start */
+
+#loader_block {
+    background: radial-gradient(circle farthest-side, #021f3a, #011223);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    z-index: 100000;
+    transition: opacity 300ms ease-in-out;
+}
+
+#loader_block span {
+    border-radius: 50%;
+    border: 6px solid var(--blue);
+    margin: 10px;
+    opacity: 0.4;
+}
+
+#loader_block span:nth-child(1) {
+    animation: preloader 1s ease-in-out alternate infinite;
+}
+
+#loader_block span:nth-child(2) {
+    animation: preloader 1s ease-in-out alternate .3s infinite;
+}
+
+#loader_block span:nth-child(3) {
+    animation: preloader 1s ease-in-out alternate .6s infinite;
+}
+
+@keyframes preloader {
+    100% {
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+
+/* Loading screen end */
+
+
+/* Header start */
+
+#header {
+    display: flex;
+    gap: 3rem;
+}
+
+.headline {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--blue);
+    background-image: linear-gradient(45deg, #b0d6fd, #9aeeff);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#headerDesc {
+    max-width: 30rem;
+    line-height: 1.7rem;
+}
+
+#logoLottie {
+    width: 25rem;
+    display: block;
+}
+
+@media (max-width:1000px) {
+    #header {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #headerDesc {
+        max-width: unset;
+        width: 90vw;
+    }
+
+    #logoLottie {
+        width: 92vw;
+    }
+}
+
+/* Header end */
+
+/* Presented start */
+
+#presentedBy {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    background: radial-gradient(circle farthest-side, #103450, #011223);
+}
+
+#presentedImgs img {
+    width: 7rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    margin-top: 0.3rem;
+    filter: drop-shadow(white 0px 2px 2px) drop-shadow(white 0px 5px 5px);
+}
+
+@media (max-width:1000px) {
+    #presentedBy {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        background: radial-gradient(circle farthest-side, #143b58, #05223f);
+        text-align: center;
+    }
+
+    #presentedImgs {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-top: 1rem;
+    }
+
+    #presentedImgs img {
+        width: 40vw;
+    }
+}
+
+/* Presented end */
+
+/* Rewards start */
+
+#rewards {
+    margin-top: 6rem;
+    display: flex;
+    align-items: center;
+    text-align: end;
+}
+
+#rewardAmt>div:nth-of-type(1) {
+    background-image: linear-gradient(45deg, #7fbbf7, #3691dc);
+    margin-bottom: 0;
+    margin-top: 0.7rem;
+}
+
+#rewardAmt>div:nth-of-type(2) {
+    font-size: 5rem;
+    margin-top: -0.7rem;
+}
+
+@media (max-width:1000px) {
+    #rewards {
+        flex-direction: column-reverse;
+        text-align: left;
+        justify-content: center;
+    }
+}
+
+/* Rewards end */
+
+.events {
+    margin-top: 6rem;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle farthest-side, #103450, #011223);
+}
+
+.eventsAlt {
+    background: none;
+}
+
+.eventsNext {
+    margin-top: 0;
+}
+
+.events .headline {
+    margin-bottom: 2rem;
+}
+
+.eventCard {
+    background: linear-gradient(0deg, rgba(16, 52, 80, 0) 0%, #134164 100%);
+    border: 0.1rem solid #1a4565;
+    border-radius: 1rem;
+    padding: 1rem 5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-align: start;
+    max-width: 48rem;
+    gap: 1rem;
+}
+
+.eventRev {
+    flex-direction: row-reverse;
+}
+
+.eventHead {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--blue);
+    width: 22rem;
+    display: block;
+}
+
+@media (max-width:1000px) {
+    .eventCard {
+        flex-direction: column-reverse;
+        max-width: calc(100vw - 6rem);
+        padding: 2rem;
+        padding-top: 1rem;
+    }
+
+    .eventHead {
+        width: auto;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+}
