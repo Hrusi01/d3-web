@@ -168,6 +168,7 @@ body {
     margin: 0 0.5rem;
     margin-top: 0.3rem;
     filter: drop-shadow(white 0px 2px 2px) drop-shadow(white 0px 5px 5px);
+    border: 2px white solid;
 }
 
 @media (max-width:1000px) {
